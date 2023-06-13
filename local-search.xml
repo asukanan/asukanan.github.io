@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>博客的基本使用</title>
+    <link href="/2023/05/30/%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <url>/2023/05/30/%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="博客的基本使用"><a href="#博客的基本使用" class="headerlink" title="博客的基本使用"></a>博客的基本使用</h1><ul><li><p>创建新文章</p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&#x27;psotName&#x27;</span><br></code></pre></td></tr></table></figure></li><li><p>创建新页面</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type">page</span> <span class="hljs-string">&#x27;pageName&#x27;</span> <br></code></pre></td></tr></table></figure><ul><li>这样会在本地博客的source-&gt;_posts路径下看到新建的文章，是md格式的，找一个markdown文本编辑器进行编辑即可。</li></ul></li><li><p>编辑完成之后本地地址预览，在博客目录下运行以下命令</p><figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">hexo clean <span class="hljs-variable">&amp;&amp;</span> hexo g <span class="hljs-variable">&amp;&amp;</span> hexo s<br></code></pre></td></tr></table></figure></li><li><p>编辑完成之后上传Github，在博客目录下运行以下命令</p><figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">hexo clean <span class="hljs-variable">&amp;&amp;</span> hexo g <span class="hljs-variable">&amp;&amp;</span> hexo d<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo常用命令</title>
+    <link href="/2023/05/06/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/05/06/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo n <span class="hljs-string">&quot;博客名称&quot;</span>  =&gt; hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;博客名称&quot;</span>   <span class="hljs-meta">#这两个都是创建新文章，前者是简写模式</span><br>hexo p  =&gt; hexo publish<br>hexo g  =&gt; hexo generate  <span class="hljs-meta">#生成</span><br>hexo s  =&gt; hexo <span class="hljs-keyword">server</span>  <span class="hljs-meta">#启动服务预览</span><br>hexo d  =&gt; hexo deploy  <span class="hljs-meta">#部署  </span><br><br>hexo <span class="hljs-keyword">server</span>   <span class="hljs-meta">#Hexo 会监视文件变动并自动更新，无须重启服务器。</span><br>hexo <span class="hljs-keyword">server</span> -s   <span class="hljs-meta">#静态模式</span><br>hexo <span class="hljs-keyword">server</span> -p <span class="hljs-number">5000</span>   <span class="hljs-meta">#更改端口</span><br>hexo <span class="hljs-keyword">server</span> -i <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.1</span>   <span class="hljs-meta">#自定义IP</span><br>hexo clean   <span class="hljs-meta">#清除缓存，网页正常情况下可以忽略此条命令</span><br>hexo g   <span class="hljs-meta">#生成静态网页</span><br>hexo d   <span class="hljs-meta">#开始部署</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mac安装homebrew</title>
+    <link href="/2023/05/05/Mac%E5%AE%89%E8%A3%85homebrew/"/>
+    <url>/2023/05/05/Mac%E5%AE%89%E8%A3%85homebrew/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>创建安装目录</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo mkdir -p <span class="hljs-regexp">/opt/</span>homebrew<br></code></pre></td></tr></table></figure></li><li><p>修改所有者，所属组</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chown</span> -R $(<span class="hljs-built_in">whoami</span>) /opt/homebrew<br></code></pre></td></tr></table></figure></li><li><p>安装 homebrew</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">curl -L https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/Homebrew/</span>brew<span class="hljs-regexp">/tarball/m</span>aster | tar xz --strip <span class="hljs-number">1</span> -C <span class="hljs-regexp">/opt/</span>homebrew<br></code></pre></td></tr></table></figure></li><li><p>修改所有者，所属组</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chown</span> -R $(<span class="hljs-built_in">whoami</span>) /opt/homebrew<br></code></pre></td></tr></table></figure></li><li><p>修改环境变量</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">echo <span class="hljs-string">&#x27;path=(&#x27;</span><span class="hljs-regexp">/opt/</span>homebrew<span class="hljs-regexp">/bin&#x27; $path) &amp;&amp; export PATH&#x27; &gt;&gt; ~/</span>.zshrc<br></code></pre></td></tr></table></figure></li><li><p>刷新环境变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc<br></code></pre></td></tr></table></figure></li><li><p>测试是否安装成功</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">brew</span><br></code></pre></td></tr></table></figure></li><li><p>一键更新清理</p><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span>update &amp;&amp; <span class="hljs-keyword">brew </span>upgrade &amp;&amp; <span class="hljs-keyword">brew </span>cleanup<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Mac</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
