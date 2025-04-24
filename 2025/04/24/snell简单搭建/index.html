@@ -27,7 +27,7 @@
 <meta property="og:description" content="去官网下载最新snell-server,以linux-amd64为例1wget https:&#x2F;&#x2F;dl.nssurge.com&#x2F;snell&#x2F;snell-server-v4.1.1-linux-amd64.zip 解压 snell-server 至指定目录1sudo unzip snell-server-v4.1.1-linux-amd64.zip -d &#x2F;usr&#x2F;local&#x2F;bin &amp;&amp;am">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-24T14:06:33.000Z">
-<meta property="article:modified_time" content="2025-04-24T15:48:56.860Z">
+<meta property="article:modified_time" content="2025-04-24T15:53:43.331Z">
 <meta property="article:author" content="Asuka">
 <meta property="article:tag" content="snell">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          256 字
+          257 字
         
       </span>
     
@@ -302,7 +302,7 @@
 <ul>
 <li>确保运行目录和配置文件权限正确</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /usr/local/bin/snell<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /etc/snell<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /usr/local/bin/snell-server<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /etc/snell<br></code></pre></td></tr></table></figure>
 <h1 id="配置-systemd-进程守护文件"><a href="#配置-systemd-进程守护文件" class="headerlink" title="配置 systemd 进程守护文件"></a>配置 systemd 进程守护文件</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo vim <span class="hljs-regexp">/etc/</span>systemd<span class="hljs-regexp">/system/</span>snell.service<br></code></pre></td></tr></table></figure>
 <ul>
 <li>将下面的复制粘贴进去</li>
