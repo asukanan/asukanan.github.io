@@ -27,7 +27,7 @@
 <meta property="og:description" content="去官网下载最新snell-server,以linux-amd64为例1wget https:&#x2F;&#x2F;dl.nssurge.com&#x2F;snell&#x2F;snell-server-v4.1.1-linux-amd64.zip 解压 snell-server 至指定目录1sudo unzip snell-server-v4.1.1-linux-amd64.zip -d &#x2F;usr&#x2F;local&#x2F;bin &amp;&amp;am">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-24T14:06:33.000Z">
-<meta property="article:modified_time" content="2025-04-26T14:09:08.425Z">
+<meta property="article:modified_time" content="2025-04-26T14:16:37.743Z">
 <meta property="article:author" content="Asuka">
 <meta property="article:tag" content="snell">
 <meta name="twitter:card" content="summary_large_image">
@@ -298,7 +298,7 @@
 <li>注：psk 可以用 openssl 生成</li>
 </ul>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">openssl</span> rand -base64 <span class="hljs-number">32</span><br></code></pre></td></tr></table></figure>
-<h1 id="可以创建一个独立的低权限用户来运行-snell"><a href="#可以创建一个独立的低权限用户来运行-snell" class="headerlink" title="可以创建一个独立的低权限用户来运行  snell"></a>可以创建一个独立的低权限用户来运行  snell</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">sudo useradd <span class="hljs-params">--system</span> <span class="hljs-params">--no-create-home</span> <span class="hljs-params">--shell</span> <span class="hljs-string">/usr/sbin/nologin</span> snell<br></code></pre></td></tr></table></figure>
+<h1 id="可以创建一个独立的低权限用户来运行-snell"><a href="#可以创建一个独立的低权限用户来运行-snell" class="headerlink" title="可以创建一个独立的低权限用户来运行  snell"></a>可以创建一个独立的低权限用户来运行  snell</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">sudo useradd <span class="hljs-params">--system</span> <span class="hljs-params">--no-create-home</span> <span class="hljs-params">--snell</span> <span class="hljs-string">/usr/sbin/nologin</span> snell<br></code></pre></td></tr></table></figure>
 <ul>
 <li>确保运行目录和配置文件权限正确</li>
 </ul>
