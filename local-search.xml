@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>yt-dlp简单配置</title>
+    <link href="/2025/05/05/yt-dlp%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/"/>
+    <url>/2025/05/05/yt-dlp%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul><li>yt-dlp 是一个很强大的 YouTube 和各类视频平台下载器，相比 youtube-dl 更新得更快、功能更多。</li></ul><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul><li>安装没什么好说的，详见<a href="https://github.com/yt-dlp/yt-dlp/wiki/Installation">官方指引</a>，建议配合 <a href="https://ffmpeg.org/">FFmpeg</a>、 <a href="https://aria2.github.io/">aria2</a> 使用。</li></ul><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul><li>分享一个简单的配置，根据实际需要自行调整</li></ul><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-comment"># 保存目录和文件名</span><br><span class="hljs-built_in">--paths</span> $<span class="hljs-string">HOME</span>/<span class="hljs-string">Downloads</span><br>-<span class="hljs-string">o</span> <span class="hljs-string">&quot;%(upload_date)s-%(uploader)s-%(title)s.%(ext)s&quot;</span><br><br><span class="hljs-comment"># 选择最佳画质视频+音频，并合并成 mp4</span><br>-<span class="hljs-string">f</span> <span class="hljs-string">bestvideo</span>+<span class="hljs-string">bestaudio</span>/<span class="hljs-string">best</span><br><span class="hljs-built_in">--merge-output-format</span> <span class="hljs-string">mp4</span><br><br><span class="hljs-comment"># 使用 aria2c 加速下载</span><br><span class="hljs-built_in">--external-downloader</span> <span class="hljs-string">aria2c</span><br><span class="hljs-built_in">--external-downloader-args</span> <span class="hljs-string">&quot;-c -x16 -s16 -k1M&quot;</span><br><br><span class="hljs-comment"># 遇到已有文件时跳过</span><br><span class="hljs-built_in">--no-overwrites</span><br><span class="hljs-built_in">--no-part</span><br><span class="hljs-built_in">--no-continue</span><br><br><span class="hljs-comment"># 下载失败时自动重试</span><br><span class="hljs-built_in">--retries</span> <span class="hljs-string">5</span><br><span class="hljs-built_in">--fragment-retries</span> <span class="hljs-string">5</span><br><span class="hljs-built_in">--abort-on-unavailable-fragment</span><br><span class="hljs-built_in">--ignore-errors</span><br><br><span class="hljs-comment"># 其他（可选，增强体验）</span><br><span class="hljs-comment">#&gt; 显示进度条</span><br><span class="hljs-built_in">--progress</span><br><span class="hljs-comment">#&gt; 不修改文件的修改时间</span><br><span class="hljs-built_in">--no-mtime</span><br><span class="hljs-comment">#&gt; 下载后把标题、作者等写入mp4文件元数据</span><br><span class="hljs-built_in">--embed-metadata</span><br><span class="hljs-comment">#&gt; 如果有封面图，则嵌入视频</span><br><span class="hljs-built_in">--embed-thumbnail</span><br><span class="hljs-comment">#&gt; 自动写入常见的元信息标签</span><br><span class="hljs-built_in">--add-metadata</span><br><span class="hljs-comment">#&gt; 反机器人机制</span><br><span class="hljs-built_in">--extractor-args</span> <span class="hljs-string">&quot;generic:impersonate&quot;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tools</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>yt-dlp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>snell简单搭建</title>
+    <link href="/2025/04/24/snell%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA/"/>
+    <url>/2025/04/24/snell%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="去官网下载最新snell-server-以linux-amd64为例"><a href="#去官网下载最新snell-server-以linux-amd64为例" class="headerlink" title="去官网下载最新snell-server,以linux-amd64为例"></a>去<a href="https://manual.nssurge.com/others/snell.html">官网</a>下载最新snell-server,以linux-amd64为例</h1><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">wget</span> https://dl.nssurge.com/snell/snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip<br></code></pre></td></tr></table></figure><h1 id="解压-snell-server-至指定目录"><a href="#解压-snell-server-至指定目录" class="headerlink" title="解压 snell-server 至指定目录"></a>解压 snell-server 至指定目录</h1><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> unzip snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip -d /usr/local/bin &amp;&amp; rm snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip<br></code></pre></td></tr></table></figure><h1 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h1><ul><li>先创建配置文件夹</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> /etc/snell<br></code></pre></td></tr></table></figure><ul><li>可以使用 snell 的 wizard 生成一个配置文件</li></ul><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">sudo snell-<span class="hljs-keyword">server</span> --wizard -c /etc/snell/snell-<span class="hljs-keyword">server</span>.conf<br></code></pre></td></tr></table></figure><ul><li>或者自己编一个</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim /etc/snell/snell-server.conf<br></code></pre></td></tr></table></figure><ul><li>将下面的复制粘贴进去</li></ul><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[snell-server]</span><br><span class="hljs-attr">listen</span> = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:port<br><span class="hljs-attr">psk</span> = psk<br><span class="hljs-attr">ipv6</span> = <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure><ul><li>注：psk 可以用 openssl 生成</li></ul><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">openssl</span> rand -base64 <span class="hljs-number">32</span><br></code></pre></td></tr></table></figure><h1 id="可以创建一个独立的低权限用户来运行-snell"><a href="#可以创建一个独立的低权限用户来运行-snell" class="headerlink" title="可以创建一个独立的低权限用户来运行  snell"></a>可以创建一个独立的低权限用户来运行  snell</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">sudo useradd <span class="hljs-params">--system</span> <span class="hljs-params">--no-create-home</span> <span class="hljs-params">--shell</span> <span class="hljs-string">/usr/sbin/nologin</span> snell<br></code></pre></td></tr></table></figure><ul><li>确保运行目录和配置文件权限正确</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /usr/local/bin/snell-server<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /etc/snell<br></code></pre></td></tr></table></figure><h1 id="配置-systemd-进程守护文件"><a href="#配置-systemd-进程守护文件" class="headerlink" title="配置 systemd 进程守护文件"></a>配置 systemd 进程守护文件</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo vim <span class="hljs-regexp">/etc/</span>systemd<span class="hljs-regexp">/system/</span>snell.service<br></code></pre></td></tr></table></figure><ul><li>将下面的复制粘贴进去</li></ul><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Snell Proxy Service<br><span class="hljs-attr">After</span>=network.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=simple<br><span class="hljs-attr">User</span>=snell<br><span class="hljs-attr">LimitNOFILE</span>=<span class="hljs-number">32768</span><br><span class="hljs-attr">ExecStart</span>=/usr/local/bin/snell-server -c /etc/snell/snell-server.conf<br><span class="hljs-attr">AmbientCapabilities</span>=CAP_NET_BIND_SERVICE<br><span class="hljs-attr">StandardOutput</span>=syslog<br><span class="hljs-attr">StandardError</span>=syslog<br><span class="hljs-attr">SyslogIdentifier</span>=snell-server<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure><h1 id="使用-systemctl-命令设置程序自启动"><a href="#使用-systemctl-命令设置程序自启动" class="headerlink" title="使用 systemctl 命令设置程序自启动"></a>使用 systemctl 命令设置程序自启动</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> snell<br><span class="hljs-built_in">sudo</span> systemctl start snell<br></code></pre></td></tr></table></figure><h1 id="查看-snell-运行状态"><a href="#查看-snell-运行状态" class="headerlink" title="查看 snell 运行状态"></a>查看 snell 运行状态</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl status snell<br></code></pre></td></tr></table></figure><h1 id="关闭-snell"><a href="#关闭-snell" class="headerlink" title="关闭 snell"></a>关闭 snell</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">sudo systemctl stop snell<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Surge</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>snell</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mac安装homebrew</title>
+    <link href="/2025/03/17/Mac%E5%AE%89%E8%A3%85homebrew/"/>
+    <url>/2025/03/17/Mac%E5%AE%89%E8%A3%85homebrew/</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建安装目录"><a href="#创建安装目录" class="headerlink" title="创建安装目录"></a>创建安装目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> -p /opt/homebrew<br></code></pre></td></tr></table></figure><h1 id="修改所有者，所属组"><a href="#修改所有者，所属组" class="headerlink" title="修改所有者，所属组"></a>修改所有者，所属组</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R $(<span class="hljs-built_in">whoami</span>) /opt/homebrew<br></code></pre></td></tr></table></figure><h1 id="安装-homebrew"><a href="#安装-homebrew" class="headerlink" title="安装 homebrew"></a>安装 homebrew</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">curl -L https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/Homebrew/</span>brew<span class="hljs-regexp">/tarball/m</span>aster | tar xz --strip <span class="hljs-number">1</span> -C <span class="hljs-regexp">/opt/</span>homebrew<br></code></pre></td></tr></table></figure><h1 id="修改所有者，所属组-1"><a href="#修改所有者，所属组-1" class="headerlink" title="修改所有者，所属组"></a>修改所有者，所属组</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R $(<span class="hljs-built_in">whoami</span>) /opt/homebrew<br></code></pre></td></tr></table></figure><h1 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;path=(&#x27;</span>/opt/homebrew/bin<span class="hljs-string">&#x27; $path) &amp;&amp; export PATH&#x27;</span> &gt;&gt; ~/.zshrc<br></code></pre></td></tr></table></figure><h1 id="刷新环境变量"><a href="#刷新环境变量" class="headerlink" title="刷新环境变量"></a>刷新环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc<br></code></pre></td></tr></table></figure><h1 id="测试是否安装成功"><a href="#测试是否安装成功" class="headerlink" title="测试是否安装成功"></a>测试是否安装成功</h1><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">brew</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Mac</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>homebrew</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>原摄之芙宁娜</title>
+    <link href="/2025/03/15/%E5%8E%9F%E6%91%84%E4%B9%8B%E8%8A%99%E5%AE%81%E5%A8%9C/"/>
+    <url>/2025/03/15/%E5%8E%9F%E6%91%84%E4%B9%8B%E8%8A%99%E5%AE%81%E5%A8%9C/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/01.png" alt="01"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/02.png" alt="02"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/03.png" alt="03"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/04.png" alt="04"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/05.png" alt="05"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/06.png" alt="06"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/07.png" alt="07"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/08.png" alt="08"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/09.png" alt="09"><br><img src="/img/%E5%8E%9F%E6%91%84/%E8%8A%99%E5%AE%81%E5%A8%9C/10.jpg" alt="10"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>原摄</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>芙宁娜</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
