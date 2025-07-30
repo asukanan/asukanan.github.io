@@ -27,7 +27,7 @@
 <meta property="og:description" content="前言最近开始捣鼓 Hexo，一个轻量的静态博客框架，主要是想找个地方安静地记录点东西，也顺便体验下 Hexo + Git 的完整部署流程。虽然官方文档写得已经够详细了，但在 Mac 上操作的过程中还是踩了不少小坑，于是就决定把整个过程整理记录下来，也方便自己回顾。 准备工作安装 HomebrewHomebrew 是 macOS 下最常用的包管理工具，后续需要用它来安装依赖。使用以下命令进行安装：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-28T13:11:07.000Z">
-<meta property="article:modified_time" content="2025-07-30T05:14:10.990Z">
+<meta property="article:modified_time" content="2025-07-30T11:08:18.335Z">
 <meta property="article:author" content="Asuka">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.1k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -300,8 +300,6 @@
 
 <p>然后访问浏览器中的 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 即可看到博客初始页面。</p>
 <h1 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h1><p>Hexo 默认使用 <code>public</code> 文件夹存放生成的静态资源，我们只需要把它部署到 GitHub 即可上线。</p>
-<p>成功上传后，博客仓库里应该会出现文件，这时只需在仓库设置里开启 Github Pages 功能就可以了。</p>
-<p>打开仓库的 Settings -&gt; Pages，将 Build and deployment 项下的 Source 设置为「Deploy from a branch」，Branch 选择「master」，单击 Save 保存，Pages 功能就被打开了，每次<code>hexo d</code>，更新后的网页都将被自动部署到 Github Pages。</p>
 <h2 id="配置-GitHub-SSH-密钥"><a href="#配置-GitHub-SSH-密钥" class="headerlink" title="配置 GitHub SSH 密钥"></a>配置 GitHub SSH 密钥</h2><p>如果你还未在本机配置过 SSH，可以按以下步骤进行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t ed25519 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span><br></code></pre></td></tr></table></figure>
 
@@ -314,33 +312,46 @@
 <h2 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h2><p>Hexo 需要用到一个插件将博客内容部署到 GitHub：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
 
-<p>修改<code>blog</code>目录下 <code>_config.yml</code> 配置文件，添加以下部署信息：</p>
+<h2 id="创建-GitHub-仓库并启用-Pages"><a href="#创建-GitHub-仓库并启用-Pages" class="headerlink" title="创建 GitHub 仓库并启用 Pages"></a>创建 GitHub 仓库并启用 Pages</h2><ol>
+<li>登录 GitHub，点击右上角“+” → “New repository”；</li>
+<li>仓库名称建议为：<code>yourusername.github.io</code>（将 <code>yourusername</code> 替换为你的 GitHub 用户名）；</li>
+<li>选择 public 类型，点击创建；</li>
+<li>创建成功后进入仓库页面，点击“Settings” → 左侧“Pages”；</li>
+<li>在“Source”处选择 <code>Deploy from a branch</code>；</li>
+<li>选择 <code>main</code> 分支，文件夹选择 <code>/ (root)</code>，点击保存；</li>
+<li>页面会自动生成一个访问链接，等待几分钟后就能访问。</li>
+</ol>
+<h2 id="配置-Hexo-部署信息"><a href="#配置-Hexo-部署信息" class="headerlink" title="配置 Hexo 部署信息"></a>配置 Hexo 部署信息</h2><p>修改<code>blog</code>目录下 <code>_config.yml</code> 配置文件，添加以下部署信息：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:你的用户名/你的仓库名.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
-<p>确保你的仓库已经创建完成且为 public。</p>
-<p>然后执行：</p>
+<p>确保你的仓库已经创建完成且为 public，然后执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
 
 <p>第一次部署可能会提示是否接受 SSH 密钥认证，输入 yes 即可。</p>
 <h1 id="自定义域名配置（可选）"><a href="#自定义域名配置（可选）" class="headerlink" title="自定义域名配置（可选）"></a>自定义域名配置（可选）</h1><p>如果你有自己的域名，可以将博客部署在个性化的地址。</p>
-<ul>
-<li>在博客根目录下的 <code>source</code> 文件夹中创建一个名为 <code>CNAME</code> 的文件：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;yourdomain.com&quot;</span> &gt; <span class="hljs-built_in">source</span>/CNAME<br></code></pre></td></tr></table></figure>
+<ol>
+<li>在博客目录中创建一个 <code>CNAME</code> 文件（建议明确路径防止路径错误）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;yourdomain.com&quot;</span> &gt; blog/source/CNAME<br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>在你的域名服务商（如 Cloudflare、阿里云等）中添加一条指向 GitHub Pages 的 CNAME 记录，目标地址为：</li>
-</ul>
+<ol start="2">
+<li>在你的域名服务商（如 Cloudflare、阿里云等）中添加一条 CNAME 记录，指向 GitHub Pages：</li>
+</ol>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">yourusername.github.<span class="hljs-built_in">io</span><br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>确保 <code>_config.yml</code> 中的 <code>url</code> 字段也已更新为你的域名：</li>
-</ul>
+<p>⚠️ <strong>注意：如果你使用 Cloudflare，添加 CNAME 记录时请关闭“小云朵”图标（即不要开启代理），否则可能导致 GitHub Pages 无法正确解析。</strong></p>
+<ol start="3">
+<li><p>登录 GitHub，进入你的博客仓库页面，点击“Settings” → 左侧“Pages”；</p>
+</li>
+<li><p>在“Custom domain”栏中填写你的域名 <code>yourdomain.com</code> 并点击“Save”；</p>
+</li>
+<li><p>勾选 <code>Enforce HTTPS</code>，等待 DNS 解析完成后访问你的自定义域名即可生效。</p>
+</li>
+<li><p>同时确保 <code>_config.yml</code> 中的 <code>url</code> 字段也已更新为你的域名：</p>
+</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://yourdomain.com</span><br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>打开存放博客的Github仓库，进入Settings页面在pages选项里的Custom domain里填入你的域名，点击Save，勾选Enforce HTTPS，等待解析完成。</li>
-</ul>
 <p>这样每次部署时，Hexo 会自动将 CNAME 文件同步至 <code>public</code> 文件夹，实现自定义域名访问。</p>
 <h1 id="常用命令整理"><a href="#常用命令整理" class="headerlink" title="常用命令整理"></a>常用命令整理</h1><ul>
 <li><code>hexo clean</code>：清理缓存文件（如生成失败时可用）</li>
