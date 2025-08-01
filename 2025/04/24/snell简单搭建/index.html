@@ -19,15 +19,15 @@
   <meta name="author" content="Asuka">
   <meta name="keywords" content="">
   
-    <meta name="description" content="去官网下载最新snell-server,以linux-amd64为例1wget https:&#x2F;&#x2F;dl.nssurge.com&#x2F;snell&#x2F;snell-server-v4.1.1-linux-amd64.zip 解压 snell-server 至指定目录1sudo unzip snell-server-v4.1.1-linux-amd64.zip -d &#x2F;usr&#x2F;local&#x2F;bin &amp;&amp;am">
+    <meta name="description" content="前言Snell 是 Surge 官方推出的一款轻量级代理服务器，基于自定义协议，专为搭配 Surge 使用设计，支持 TCP、UDP 以及 TLS 加密传输。 本文简要介绍如何在 Linux 系统上安装和配置 Snell，实现本地代理转发。操作步骤简洁明了，适合快速部署。 安装 Snell 下载并解压服务端 ,以 Snell v5.0.0 Linux amd64 版本为例： 1wget -O sn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="snell简单搭建">
 <meta property="og:url" content="https://asue.uk/2025/04/24/snell%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="飛鳥">
-<meta property="og:description" content="去官网下载最新snell-server,以linux-amd64为例1wget https:&#x2F;&#x2F;dl.nssurge.com&#x2F;snell&#x2F;snell-server-v4.1.1-linux-amd64.zip 解压 snell-server 至指定目录1sudo unzip snell-server-v4.1.1-linux-amd64.zip -d &#x2F;usr&#x2F;local&#x2F;bin &amp;&amp;am">
+<meta property="og:description" content="前言Snell 是 Surge 官方推出的一款轻量级代理服务器，基于自定义协议，专为搭配 Surge 使用设计，支持 TCP、UDP 以及 TLS 加密传输。 本文简要介绍如何在 Linux 系统上安装和配置 Snell，实现本地代理转发。操作步骤简洁明了，适合快速部署。 安装 Snell 下载并解压服务端 ,以 Snell v5.0.0 Linux amd64 版本为例： 1wget -O sn">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-24T14:06:33.000Z">
-<meta property="article:modified_time" content="2025-07-30T04:56:26.381Z">
+<meta property="article:modified_time" content="2025-08-01T15:07:45.276Z">
 <meta property="article:author" content="Asuka">
 <meta property="article:tag" content="snell">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          257 字
+          562 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -276,41 +276,67 @@
             
               <div class="markdown-body">
                 
-                <h1 id="去官网下载最新snell-server-以linux-amd64为例"><a href="#去官网下载最新snell-server-以linux-amd64为例" class="headerlink" title="去官网下载最新snell-server,以linux-amd64为例"></a>去<a target="_blank" rel="noopener" href="https://manual.nssurge.com/others/snell.html">官网</a>下载最新snell-server,以linux-amd64为例</h1><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">wget</span> https://dl.nssurge.com/snell/snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip<br></code></pre></td></tr></table></figure>
-<h1 id="解压-snell-server-至指定目录"><a href="#解压-snell-server-至指定目录" class="headerlink" title="解压 snell-server 至指定目录"></a>解压 snell-server 至指定目录</h1><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> unzip snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip -d /usr/local/bin &amp;&amp; rm snell-server-v4.<span class="hljs-number">1</span>.<span class="hljs-number">1</span>-linux-amd64.zip<br></code></pre></td></tr></table></figure>
-<h1 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h1><ul>
-<li>先创建配置文件夹</li>
-</ul>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><a target="_blank" rel="noopener" href="https://kb.nssurge.com/surge-knowledge-base/zh/release-notes/snell">Snell</a> 是 Surge 官方推出的一款轻量级代理服务器，基于自定义协议，专为搭配 Surge 使用设计，支持 TCP、UDP 以及 TLS 加密传输。</p>
+<p>本文简要介绍如何在 Linux 系统上安装和配置 Snell，实现本地代理转发。操作步骤简洁明了，适合快速部署。</p>
+<h1 id="安装-Snell"><a href="#安装-Snell" class="headerlink" title="安装 Snell"></a>安装 Snell</h1><ol>
+<li><p>下载并解压服务端 ,以 Snell v5.0.0 Linux amd64 版本为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O snell-server.zip https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-amd64.zip      &amp;&amp; unzip snell-server.zip -d /usr/local/bin      &amp;&amp; <span class="hljs-built_in">rm</span> snell-server.zip<br></code></pre></td></tr></table></figure>
+
+<p>添加执行权限（解压后默认名为 snell-server）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x /usr/local/bin/snell-server<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p>创建配置文件：</p>
+<ul>
+<li><p>首先新建配置目录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">mkdir</span> /etc/snell<br></code></pre></td></tr></table></figure>
-<ul>
-<li>可以使用 snell 的 wizard 生成一个配置文件</li>
-</ul>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">sudo snell-<span class="hljs-keyword">server</span> --wizard -c /etc/snell/snell-<span class="hljs-keyword">server</span>.conf<br></code></pre></td></tr></table></figure>
-<ul>
-<li>或者自己编一个</li>
-</ul>
+</li>
+<li><p>使用向导生成配置文件（推荐）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> snell-server --wizard -c /etc/snell/snell-server.conf<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>或者手动创建：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim /etc/snell/snell-server.conf<br></code></pre></td></tr></table></figure>
-<ul>
-<li>将下面的复制粘贴进去</li>
-</ul>
+
+<p>内容示例：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[snell-server]</span><br><span class="hljs-attr">listen</span> = <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:port<br><span class="hljs-attr">psk</span> = psk<br><span class="hljs-attr">ipv6</span> = <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<ul>
-<li>注：psk 可以用 openssl 生成</li>
+
+<p>提示：你可以使用以下命令生成随机 PSK：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openssl rand -<span class="hljs-built_in">base64</span> 32<br></code></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">openssl</span> rand -base64 <span class="hljs-number">32</span><br></code></pre></td></tr></table></figure>
-<h1 id="可以创建一个独立的低权限用户来运行-snell"><a href="#可以创建一个独立的低权限用户来运行-snell" class="headerlink" title="可以创建一个独立的低权限用户来运行  snell"></a>可以创建一个独立的低权限用户来运行  snell</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">sudo useradd <span class="hljs-params">--system</span> <span class="hljs-params">--no-create-home</span> <span class="hljs-params">--shell</span> <span class="hljs-string">/usr/sbin/nologin</span> snell<br></code></pre></td></tr></table></figure>
-<ul>
-<li>确保运行目录和配置文件权限正确</li>
-</ul>
+</li>
+</ol>
+<h1 id="创建独立用户运行-Snell"><a href="#创建独立用户运行-Snell" class="headerlink" title="创建独立用户运行 Snell"></a>创建独立用户运行 Snell</h1><ol>
+<li>建议为 Snell 创建一个低权限系统用户以提高安全性：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> useradd --system --no-create-home --shell /usr/sbin/nologin snell<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>确保执行文件和配置文件拥有正确权限：</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /usr/local/bin/snell-server<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chown</span> -R snell:snell /etc/snell<br></code></pre></td></tr></table></figure>
-<h1 id="配置-systemd-进程守护文件"><a href="#配置-systemd-进程守护文件" class="headerlink" title="配置 systemd 进程守护文件"></a>配置 systemd 进程守护文件</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo vim <span class="hljs-regexp">/etc/</span>systemd<span class="hljs-regexp">/system/</span>snell.service<br></code></pre></td></tr></table></figure>
-<ul>
-<li>将下面的复制粘贴进去</li>
-</ul>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Snell Proxy Service<br><span class="hljs-attr">After</span>=network.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=simple<br><span class="hljs-attr">User</span>=snell<br><span class="hljs-attr">LimitNOFILE</span>=<span class="hljs-number">32768</span><br><span class="hljs-attr">ExecStart</span>=/usr/local/bin/snell-server -c /etc/snell/snell-server.conf<br><span class="hljs-attr">AmbientCapabilities</span>=CAP_NET_BIND_SERVICE<br><span class="hljs-attr">StandardOutput</span>=syslog<br><span class="hljs-attr">StandardError</span>=syslog<br><span class="hljs-attr">SyslogIdentifier</span>=snell-server<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
-<h1 id="使用-systemctl-命令设置程序自启动"><a href="#使用-systemctl-命令设置程序自启动" class="headerlink" title="使用 systemctl 命令设置程序自启动"></a>使用 systemctl 命令设置程序自启动</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> snell<br><span class="hljs-built_in">sudo</span> systemctl start snell<br></code></pre></td></tr></table></figure>
-<h1 id="查看-snell-运行状态"><a href="#查看-snell-运行状态" class="headerlink" title="查看 snell 运行状态"></a>查看 snell 运行状态</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl status snell<br></code></pre></td></tr></table></figure>
-<h1 id="关闭-snell"><a href="#关闭-snell" class="headerlink" title="关闭 snell"></a>关闭 snell</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">sudo systemctl stop snell<br></code></pre></td></tr></table></figure>
+
+<h1 id="配置-systemd-服务"><a href="#配置-systemd-服务" class="headerlink" title="配置 systemd 服务"></a>配置 systemd 服务</h1><p>为了便于管理 Snell 服务，建议配置 systemd 单元：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> vim /etc/systemd/system/snell.service<br></code></pre></td></tr></table></figure>
+
+<p>添加以下内容：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Snell Proxy Service<br><span class="hljs-attr">After</span>=network.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">ExecStart</span>=/usr/local/bin/snell-server -c /etc/snell/snell-server.conf<br><span class="hljs-attr">User</span>=snell<br><span class="hljs-attr">Restart</span>=<span class="hljs-literal">on</span>-failure<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
+
+<p>保存后执行以下命令启动并设置开机启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reexec<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> --now snell<br></code></pre></td></tr></table></figure>
+
+<p>查看服务状态：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl status snell<br></code></pre></td></tr></table></figure>
+
+<h1 id="开放防火墙端口"><a href="#开放防火墙端口" class="headerlink" title="开放防火墙端口"></a>开放防火墙端口</h1><p>根据配置中监听的端口号，在防火墙中放行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> ufw allow 端口号<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="更新-Snell"><a href="#更新-Snell" class="headerlink" title="更新 Snell"></a>更新 Snell</h1><p>更新 Snell 的方式与首次安装类似，只需下载新版覆盖旧文件即可，注意替换下载链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl stop snell<br>wget -O snell-server.zip https://dl.nssurge.com/snell/snell-server-v5.0.0-linux-amd64.zip \<br>  &amp;&amp; unzip -o snell-server.zip -d /usr/local/bin \<br>  &amp;&amp; <span class="hljs-built_in">rm</span> snell-server.zip<br><span class="hljs-built_in">chmod</span> +x /usr/local/bin/snell-server<br><span class="hljs-built_in">sudo</span> systemctl start snell<br></code></pre></td></tr></table></figure>
+
+<p>你也可以查看<a target="_blank" rel="noopener" href="https://kb.nssurge.com/surge-knowledge-base/zh/release-notes/snell">官方</a>发布页确认是否有新版本。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>Snell 是一个部署快速、配置灵活的代理服务器，适合个人或小规模私用代理部署。搭配 Surge 使用可实现高速稳定的连接体验。</p>
+
                 
               </div>
             
