@@ -19,12 +19,12 @@
   <meta name="author" content="Asuka">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简介 yt-dlp 是一个很强大的 YouTube 和各类视频平台下载器，相比 youtube-dl 更新得更快、功能更多。  安装 安装没什么好说的，详见官方指引，建议配合 FFmpeg、 aria2 使用。  配置 分享一个简单的配置，根据实际需要自行调整  123456789101112131415161718192021222324252627282930313233343536# 保存目">
+    <meta name="description" content="简介 yt-dlp 是一个很强大的 YouTube 和各类视频平台下载器，相比 youtube-dl 更新得更快、功能更多。  安装 安装没什么好说的，详见官方指引，建议配合 FFmpeg、 aria2 使用。  配置 分享一个简单的配置，根据实际需要自行调整  # 保存目录和文件名 --paths $HOME&#x2F;Downloads -o &quot;%(upload_date)s-%(u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yt-dlp简单配置">
 <meta property="og:url" content="https://asuk.me/2025/05/05/yt-dlp-jian-dan-pei-zhi/index.html">
 <meta property="og:site_name" content="飛鳥">
-<meta property="og:description" content="简介 yt-dlp 是一个很强大的 YouTube 和各类视频平台下载器，相比 youtube-dl 更新得更快、功能更多。  安装 安装没什么好说的，详见官方指引，建议配合 FFmpeg、 aria2 使用。  配置 分享一个简单的配置，根据实际需要自行调整  123456789101112131415161718192021222324252627282930313233343536# 保存目">
+<meta property="og:description" content="简介 yt-dlp 是一个很强大的 YouTube 和各类视频平台下载器，相比 youtube-dl 更新得更快、功能更多。  安装 安装没什么好说的，详见官方指引，建议配合 FFmpeg、 aria2 使用。  配置 分享一个简单的配置，根据实际需要自行调整  # 保存目录和文件名 --paths $HOME&#x2F;Downloads -o &quot;%(upload_date)s-%(u">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-05T14:41:16.000Z">
 <meta property="article:modified_time" content="2025-08-02T07:19:56.508Z">
@@ -43,6 +43,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -223,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          264 字
+          265 字
         
       </span>
     
@@ -285,7 +287,42 @@
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
 <li>分享一个简单的配置，根据实际需要自行调整</li>
 </ul>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-comment"># 保存目录和文件名</span><br><span class="hljs-built_in">--paths</span> $<span class="hljs-string">HOME</span>/<span class="hljs-string">Downloads</span><br>-<span class="hljs-string">o</span> <span class="hljs-string">&quot;%(upload_date)s-%(uploader)s-%(title)s.%(ext)s&quot;</span><br><br><span class="hljs-comment"># 选择最佳画质视频+音频，并合并成 mp4</span><br>-<span class="hljs-string">f</span> <span class="hljs-string">bestvideo</span>+<span class="hljs-string">bestaudio</span>/<span class="hljs-string">best</span><br><span class="hljs-built_in">--merge-output-format</span> <span class="hljs-string">mp4</span><br><br><span class="hljs-comment"># 使用 aria2c 加速下载</span><br><span class="hljs-built_in">--external-downloader</span> <span class="hljs-string">aria2c</span><br><span class="hljs-built_in">--external-downloader-args</span> <span class="hljs-string">&quot;-c -x16 -s16 -k1M&quot;</span><br><br><span class="hljs-comment"># 遇到已有文件时跳过</span><br><span class="hljs-built_in">--no-overwrites</span><br><span class="hljs-built_in">--no-part</span><br><span class="hljs-built_in">--no-continue</span><br><br><span class="hljs-comment"># 下载失败时自动重试</span><br><span class="hljs-built_in">--retries</span> <span class="hljs-string">5</span><br><span class="hljs-built_in">--fragment-retries</span> <span class="hljs-string">5</span><br><span class="hljs-built_in">--abort-on-unavailable-fragment</span><br><span class="hljs-built_in">--ignore-errors</span><br><br><span class="hljs-comment"># 其他（可选，增强体验）</span><br><span class="hljs-comment">#&gt; 显示进度条</span><br><span class="hljs-built_in">--progress</span><br><span class="hljs-comment">#&gt; 不修改文件的修改时间</span><br><span class="hljs-built_in">--no-mtime</span><br><span class="hljs-comment">#&gt; 下载后把标题、作者等写入mp4文件元数据</span><br><span class="hljs-built_in">--embed-metadata</span><br><span class="hljs-comment">#&gt; 如果有封面图，则嵌入视频</span><br><span class="hljs-built_in">--embed-thumbnail</span><br><span class="hljs-comment">#&gt; 自动写入常见的元信息标签</span><br><span class="hljs-built_in">--add-metadata</span><br><span class="hljs-comment">#&gt; 反机器人机制</span><br><span class="hljs-built_in">--extractor-args</span> <span class="hljs-string">&quot;generic:impersonate&quot;</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none"># 保存目录和文件名
+--paths $HOME&#x2F;Downloads
+-o &quot;%(upload_date)s-%(uploader)s-%(title)s.%(ext)s&quot;
+
+# 选择最佳画质视频+音频，并合并成 mp4
+-f bestvideo+bestaudio&#x2F;best
+--merge-output-format mp4
+
+# 使用 aria2c 加速下载
+--external-downloader aria2c
+--external-downloader-args &quot;-c -x16 -s16 -k1M&quot;
+
+# 遇到已有文件时跳过
+--no-overwrites
+--no-part
+--no-continue
+
+# 下载失败时自动重试
+--retries 5
+--fragment-retries 5
+--abort-on-unavailable-fragment
+--ignore-errors
+
+# 其他（可选，增强体验）
+#&gt; 显示进度条
+--progress
+#&gt; 不修改文件的修改时间
+--no-mtime
+#&gt; 下载后把标题、作者等写入mp4文件元数据
+--embed-metadata
+#&gt; 如果有封面图，则嵌入视频
+--embed-thumbnail
+#&gt; 自动写入常见的元信息标签
+--add-metadata
+#&gt; 反机器人机制
+--extractor-args &quot;generic:impersonate&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
@@ -540,6 +577,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
