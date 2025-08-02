@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://asuk.me/2025/07/28/mac-da-jian-hexo-bo-ke/</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/2025/05/05/yt-dlp-jian-dan-pei-zhi/</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/about/index.html</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/tags/index.html</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/categories/index.html</loc>
+    
+    <lastmod>2025-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/2025/04/24/snell-jian-dan-da-jian/</loc>
+    
+    <lastmod>2025-08-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/2025/03/17/mac-an-zhuang-homebrew/</loc>
+    
+    <lastmod>2025-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://asuk.me/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://asuk.me/tags/snell/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/tags/hexo/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/tags/yt-dlp/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/tags/homebrew/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://asuk.me/categories/Surge/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/categories/Mac/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://asuk.me/categories/Tools/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+</urlset>
